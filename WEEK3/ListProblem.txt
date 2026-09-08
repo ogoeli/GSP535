@@ -23,7 +23,7 @@ Result: 13
 Solution:print(students[:5])
 Result:['Chris', 'Alex', 'Jacob', 'Jennifer', 'David']
 7) Get the last 5 students
-Solution:print(students[16:])
+Solution:print(students[-5:])
 Result:['Nathan', 'Robert', 'Brandon', 'Olusegun', 'Joseph']
 8) Remove the first “Andrew” and place it to the end of the list
 Solution:ReAnd = str("Andrew")

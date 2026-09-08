@@ -19,13 +19,13 @@ print(AndCount)
 print(students.index("Andrew"))
 
 #index of 2nd Andrew
-print(students.index("Andrew", 6)) #since the 1st Andrew fell in 5th items, i seartched from 6th items till the end of the list
+print(students.index("Andrew", 6)) #since the 1st Andrew fell in 5th index, i seartched from 6th index till the end of the list
 
 #1st 5 items in the list
 print(students[:5])
 
 #last 5 items in the list
-print(students[16:])
+print(students[-5:])
 
 #remove 1st occurence of an item and place it at the end of the list
 ReAnd = str("Andrew")
