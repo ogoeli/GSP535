@@ -1,0 +1,41 @@
+1) Find the number of students in the list
+Solution: print(len(students))
+Result: 19
+2) Add student 'Joseph' to the end of the list
+Solution:students.append("Joseph")
+print(students)
+Result:['Alex', 'Jacob', 'Jennifer', 'David', 'Andrew', 'John', 'Kevin', 'Clay', 'Kimberly', 'Jill', 'Joseph', 'Donitza', 'Andrew', 'Cory', 'Vincent', 'Nathan', 'Robert', 'Brandon', 'Olusegun', 'Joseph']
+3) Add student 'Chris' at the beginning of the list
+Solution:students.insert(0,"Chris")
+print(students)
+Result:['Chris', 'Alex', 'Jacob', 'Jennifer', 'David', 'Andrew', 'John', 'Kevin', 'Clay', 'Kimberly', 'Jill', 'Joseph', 'Donitza', 'Andrew', 'Cory', 'Vincent', 'Nathan', 'Robert', 'Brandon', 'Olusegun', 'Joseph']
+4) Find how many “Andrew”s exist in the list.
+Solution:AndCount = students.count("Andrew")
+print(AndCount)
+Result:2
+5) Find the index of first and second “Andrew”.
+Solution:print(students.index("Andrew")) #first Andrew
+Result: 5
+Solution:print(students.index("Andrew", 6)) #since the 1st Andrew fell in 5th items, i searched from 6th items till the end of the list
+Result: 13
+(Hint: Pay attention to arguments of the index() method in the IntelliSense)
+6) Get the first 5 students
+Solution:print(students[:5])
+Result:['Chris', 'Alex', 'Jacob', 'Jennifer', 'David']
+7) Get the last 5 students
+Solution:print(students[16:])
+Result:['Nathan', 'Robert', 'Brandon', 'Olusegun', 'Joseph']
+8) Remove the first “Andrew” and place it to the end of the list
+Solution:ReAnd = str("Andrew")
+students.remove(ReAnd)
+students.append(ReAnd)
+print(students)
+Result:['Chris', 'Alex', 'Jacob', 'Jennifer', 'David', 'John', 'Kevin', 'Clay', 'Kimberly', 'Jill', 'Joseph', 'Donitza', 'Andrew', 'Cory', 'Vincent', 'Nathan', 'Robert', 'Brandon', 'Olusegun', 'Joseph', 'Andrew']
+9) Sort the list in ascending order
+Solution:students.sort()
+print(students)
+Result:['Alex', 'Andrew', 'Andrew', 'Brandon', 'Chris', 'Clay', 'Cory', 'David', 'Donitza', 'Jacob', 'Jennifer', 'Jill', 'John', 'Joseph', 'Joseph', 'Kevin', 'Kimberly', 'Nathan', 'Olusegun', 'Robert', 'Vincent']
+10) Sort the list in descending order
+Solution:students.sort(reverse=True)
+print(students)
+Result:['Vincent', 'Robert', 'Olusegun', 'Nathan', 'Kimberly', 'Kevin', 'Joseph', 'Joseph', 'John', 'Jill', 'Jennifer', 'Jacob', 'Donitza', 'David', 'Cory', 'Clay', 'Chris', 'Brandon', 'Andrew', 'Andrew', 'Alex']
