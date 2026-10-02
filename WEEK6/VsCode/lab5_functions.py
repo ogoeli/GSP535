@@ -1,4 +1,4 @@
-#create a function named volume() with two parameters length, width and height
+#create a function named volume() with 3 parameters length, width and height
 def volume(length, width, height):
     vol = (length * width * height) #calculate the volume of blocks 
     return vol  # and return the result stored in vol
