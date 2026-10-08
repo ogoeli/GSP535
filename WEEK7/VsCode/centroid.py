@@ -12,6 +12,6 @@ out_fc = "parks_centroid.shp"
 
 #if statement to perform the feature to point if ArcInfo is found
 if arcpy.ProductInfo() == "ArcInfo": 
-arcpy.FeatureToPoint_management(in_fc, out_fc) 
+    arcpy.FeatureToPoint_management(in_fc, out_fc) 
 else: 
-print("An ArcInfo license is not available.")
+    print("An ArcInfo license is not available.")
