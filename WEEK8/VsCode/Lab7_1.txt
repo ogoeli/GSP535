@@ -1,0 +1,61 @@
+1) Print a message: 
+	Print(Python is fun)
+
+Ans: print('Python is fun') #print sentence wrapped in '' and lowercase print
+
+2) Calculate total: 
+	x = input("Enter a whole number: ") 
+	y = input("Enter another whole number: ") 
+	sum = x + y 
+	print("The sum of {0} and {1} is {2}".format(x, y, sum) 
+
+Ans: 	x = int(input("Enter a whole number: ")) 
+	y = int(input("Enter another whole number: ")) #int to convert string input to integer
+	sum = x + y 
+	print("The sum of {0} and {1} is {2}".format(x, y, sum)) #close the bracket.
+
+
+3) Find the bigger number: 
+	a = int(input("Enter a whole number: ")) 
+	b = int(input("Enter another whole number: ")) 
+	bigger = None 
+	if a > b 
+		bigger = a 
+	elif b > a 
+		bigger = b 
+		print("The bigger is:", Bigger) 
+
+Ans: 	a = int(input("Enter a whole number: ")) 
+	b = int(input("Enter another whole number: ")) 
+	bigger = None 
+	if a > b: #semicolon
+		bigger = a 
+	elif b > a: #semicolon 
+		bigger = b 
+	print("The bigger is:", bigger) #python is case sensitive so bigger and not Bigger
+
+4) Print numbers 1 through 10: 
+	n = 0 
+	for i in range(10): 
+		n += i 
+			print(n) 
+
+Ans: 	
+	for i in range(1, 11): #fixed the if statement 
+		print(i) #indentation error because the print should be inside the for loop
+
+5) Calculate the average of values in a list: 
+	values = [10, 20, 30, 40, 50, 60] 
+	total = 0 
+	for n in values: 
+		total += n 
+	average = total / (len(values) - 1) 
+	print("Average = " + average)
+
+Ans: 
+ 	values = [10, 20, 30, 40, 50, 60] 
+	total = 0 
+	for n in values: 
+		total += n 
+	average = total / len(values) #changed the formula
+	print("Average = ", average) # cannot concatenate a string and a number directly using +
