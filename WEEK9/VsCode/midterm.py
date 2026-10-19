@@ -7,14 +7,23 @@ arcpy.env.workspace = r'C:\Users\ope4\OneDrive - Northern Arizona University\Des
 
 # make a feature layer from the parcel feature class for use
 # by the SelectLayerByLocation() tool
-parcel_layer = arcpy.management.MakeFeatureLayer('Parcels', 'parcel_layer')
+print('Creating a parcel layer ...')
+try:
+    #try the following block of code 
+    parcel_layer = arcpy.management.MakeFeatureLayer('Parcels', 'parcel_layer')
+except TypeError:   # catches data type exception 
+    print("Error: Incorrect data type") 
+except Exception as e:  # catches any other exceptions 
+    print(e) 
 
 # list well paths in the well_data feature dataset
 #wild card - B* finds all dataset that starts with B
 #the feature type is a 'line'
 #the feature_dataset is the feature class containing the well dats lines.
+print('creating a feature dataset for the well data ...')
 well_path_list = arcpy.ListFeatureClasses('B*', 'Line', 'Well_Data') 
-print(well_path_list)
+print(f'Well Data paths are {well_path_list}')
+
 
 for well_path in well_path_list:   # for each well path, do the following:
 # create an output well buffer name for use by the Buffer() tool
@@ -44,22 +53,16 @@ for well_path in well_path_list:   # for each well path, do the following:
     filecsv.close() # closes the file since the file object is no longer needed
     lines.pop(0) # remove the first line (a file header) from the lines list
 
-    # write the header for the txt file created
-    #filetxt.write()
-    
     #extract addresses from the parcel_csv file and
     #write them into the mailing list file
-    #(Refer to Lecture 5 Examples 8 & 9 and Lab 4)
     #for each line in the csv file, write its cotent to a txt file
     for line in lines: # starts a for loop to iterate over each line
         split_line = line.split(',') #split the lines by ","
         address = split_line[19] #get the 19th index which is the PROP_ADD
-        #filetxt = open(mailing_txt, "w") #open txt file for writing 
         filetxt.write(address + '\n')
-        
     filetxt.close() #close the txt file after writing.
 
-    #deleting intermediate datasets
+#deleting intermediate datasets
 print('Cleaning up ...')
 arcpy.management.Delete(parcel_csv) #delete the parcel_csv file
 
