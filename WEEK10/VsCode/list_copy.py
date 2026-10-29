@@ -1,3 +1,11 @@
+#this script imports the arcpy env, sets the workspace,
+# creates output geodatabase, create a file gdb
+#a for loop to list all feature in the list
+#extracts the basename and join the paths from the ws to the geodatabase created and attache the name
+#the last line copies the feature from the old one to the new feature,
+#copy geometry and attributes from an existing feature class, layer,
+#or table view to a new feature class
+
 #import the arcpy env
 import arcpy
 import os
@@ -19,14 +27,9 @@ arcpy.env.workspace = ws
 
 #arcpy.ListFeatureClasses() function
 #returns a Python list of feature class names in the current workspace
-fclist = arcpy.ListFeatureClasses()
+fclist = arcpy.ListFeatureClasses() #calls the ListFeatureClasses() to returns a Python list of feature class names in the current workspace
 
-# a for loop to list all feature in the list
-#extracts the basename and join the paths from the ws to the geodatabase created and attache the name
-#the last line copies the feature from the old one to the new feature,
-#copy geometry and attributes from an existing feature class, layer,
-#or table view to a new feature class
 for fc in fclist: #start of the loop
-    fcname = arcpy.da.Describe(fc)["baseName"] #a line to get fc basename
-    newfc = os.path.join(ws, fgdb, fcname) #oin the paths from the ws to the geodatabase created and attache the name
-    arcpy.CopyFeatures_management(fc, newfc) #the last line copies the feature from the old one to the new feature,
+    fcname = arcpy.da.Describe(fc)["baseName"] # call function Describe() to describe a line to get fc basename
+    newfc = os.path.join(ws, fgdb, fcname) #call the os.path.join() to join the paths from the ws to the geodatabase created and attache the name
+    arcpy.CopyFeatures_management(fc, newfc) #call the CopyFeatures_management() to copy the  feature from the old one to the new feature,
