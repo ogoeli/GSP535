@@ -19,8 +19,9 @@ for row in cursor: # loop through rows in the cursor created above
 # the lines searches with exact value expression whereTOT_ENP greater than 100000 rows, get assigns to sql_exp 
 
 #2) Why is "TOT_ENP" quoted by a pair of double quotation marks but 100000 is not? 
+#Field delimiters for shapefiles consist of double quotation marks and no no quotation #marks around around numeric values
 # because the string values must be single quoted inside the expr. but  Numbers must not be quoted inside the expr.  
 # and  A basic query expression is a string, (so it must be enclosed in a pair of quotation marks 
 
 #3) Can we take off the double quotation marks around TOT_ENP?
-#No, the double quotation indicates the TOT_ENP is a string value enclosed in the exp.
+#No, the double quotation indicates the TOT_ENP is a Field delimiters for shapefiles enclosed in the exp.
