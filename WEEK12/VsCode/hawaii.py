@@ -5,7 +5,7 @@ arcpy.env.overwriteOutput = True
 #set the working directory to the EX09
 arcpy.env.workspace = r'C:\Users\ope4\OneDrive - Northern Arizona University\Desktop\ACADEMIC_SEMSTER\FALL 2026\GSP 535 - PROGRAMMING FOR GIS\WEEK12\Ignore\PythonScripting_Ex09_Data\Ex09'
 
-fc = "hawaii.shp" #assign the dams shapefile to fc variable
+fc = "hawaii.shp" #assign the hawaii shapefile to fc variable
 
 with arcpy.da.SearchCursor(fc, (["OID@", "SHAPE@"])) as cursor: #use SearchCursor to read data from the feature class created above. this also retrives the OID and shape of each geom and holds it as cursor
 

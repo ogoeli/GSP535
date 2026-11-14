@@ -4,7 +4,7 @@ def calculateArea(coordlist):
         return 0.0 
      
     if coordlist[np-1] != coordlist[0]: 
-        coordlist.appand(coordlist[0]) 
+        coordlist.append(coordlist[0]) 
         np = len(coordlist) 
          
     p1, p2 = None, None 
@@ -20,4 +20,4 @@ if __name__ == "__main__":         # testing code
     # create a list of [x, y] coordinates of a polygon 
     vlist = [[0, 0], [0, 1], [1, 1], [1, 0], [0.5, 0.5], [0, 0]] 
     area = calculateArea(vlist)    # calls the function to calculate area 
-print(area) 
+#print(area) 
