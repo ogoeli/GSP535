@@ -14,4 +14,10 @@ with arcpy.da.SearchCursor(fc, ["SHAPE@LENGTH"]) as cursor: #use SearchCursor to
     for row in cursor: #a for loop to loop through each feature in the cursor
         length = length + row[0] # and add the each length to the cumulative lenght variable
 
-    print(length) #print out the value of the length stored
+    #print(length) #print out the value of the length stored
+
+    desc = arcpy.da.Describe(fc) #describes the fc and result stored in desc
+
+    units = desc["spatialReference"].linearUnitName #access the unit from the fc description
+
+    print(f"{length:.2f} {units}") #prints the length and unit
