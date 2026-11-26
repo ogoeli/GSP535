@@ -1,6 +1,5 @@
 #import the arcpy env
 import arcpy
-import fileinput 
 import os
 arcpy.env.overwriteOutput = True
 
