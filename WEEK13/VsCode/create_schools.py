@@ -16,7 +16,7 @@ srOut = arcpy.SpatialReference(102649) #blank shp crs
 
 arcpy.CreateFeatureclass_management(ws, newfc,"Point", spatial_reference = srOut) #create empty new fc, as a POINT and dams crs
 
- # Run AddField 4 times  for two new fields
+ # Run AddField 4 times  for 4 new fields
 arcpy.management.AddField(newfc, 'NAME', "TEXT", field_length = 50)
 arcpy.management.AddField(newfc, 'ADDRESS', "TEXT", field_length = 50)
 arcpy.management.AddField(newfc, 'ZIP', "TEXT", field_length = 10)
@@ -25,12 +25,12 @@ arcpy.management.AddField(newfc, 'DISTRICT', "SHORT")
 #read the txt file with cordinates
 infile = os.path.join(ws, "schools.txt") #The coordinates in this text file will be used to create the vertices for a point
 
-with arcpy.da.InsertCursor(newfc, ["Id", "SHAPE@", "NAME", "ADDRESS", "ZIP", "DISTRICT"]) as cursor: #use of an insert cursor to create new rows and an array object to contain the point objects.
+with arcpy.da.InsertCursor(newfc, ["Id", "SHAPE@", "NAME", "ADDRESS", "ZIP", "DISTRICT"]) as cursor: #use of an insert cursor to create new rows and an object to contain the point objects.
     with open(infile) as f: #open the input file
         next(f) #skip the header before the loop starts
     
         for line in f: #iterate over the text file to create a point object for each line in the text file.
-            ID, X, Y, NAME, ADDRESS, ZIP, DISTRICT = line.strip().split(',') #split each txt file line into 3 variables ID, X and Y
+            ID, X, Y, NAME, ADDRESS, ZIP, DISTRICT = line.strip().split(',') #split each txt file line into variables ID, X and Y....
             X = float(X) #convert from string to float
             Y = float(Y) #convert from string to float
             ID = int(ID) #convert the ID to an interger
